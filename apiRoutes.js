@@ -15,7 +15,7 @@ module.exports = app => {
         notesArray.push(newNote);
         fs.writeFile(file, JSON.stringify(notesArray, null, 4), err => {
             if (err) throw err;
-            console.log("New note has been saved!");
+            console.log("Note has been saved!");
         });
         res.json(notesArray);
     });
@@ -28,7 +28,7 @@ module.exports = app => {
                 notesArray.splice(index, 1);
                 fs.writeFile(file, JSON.stringify(notesArray, null, 4), err => {
                     if (err) throw err;
-                    console.log("Note has been deleted!");
+                    console.log("Your note has been deleted!");
                 });
                 res.end();
             }
